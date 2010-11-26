@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Firefox memory tracer</title>
+        <% %w(jquery.js).each do |js| %>
+            <script src="javascripts/jquery.js"></script>
+        <% end %>
+    </head>
+    <body>
+        <%= yield %>
+    </body>
+</html>
+

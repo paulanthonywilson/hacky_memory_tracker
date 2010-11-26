@@ -1,0 +1,22 @@
+<script>
+    $(document).ready(function(){
+
+        setInterval(function(){$.get('/memory', function(res){
+                console.log();
+                $('#memory').html(res.memory);
+                $('#peak').html(res.peak);
+                $('#trough').html(res.trough);
+        })}, 500);
+    });
+</script>
+
+
+<dl>
+    <dt>Memory</dt>
+    <dd id="memory"></dd>
+    <dt>Peak</dt>
+    <dd id="peak"></dd>
+    <dt>Trough</dt>
+    <dd id="trough"></dd>
+</dl>
+
