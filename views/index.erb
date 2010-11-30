@@ -1,6 +1,10 @@
 <script>
     $(document).ready(function(){
 
+        $('#save').bind('click', function(){
+            $('#saved').prepend("<li>" + new Date() + "<dl>" + $('#current').html() + "</dl></li>");
+        });
+
         setInterval(function(){$.get('/memory', function(res){
                 console.log();
                 $('#memory').html(res.memory);
@@ -11,7 +15,7 @@
 </script>
 
 
-<dl>
+<dl id="current">
     <dt>Memory</dt>
     <dd id="memory"></dd>
     <dt>Peak</dt>
@@ -20,3 +24,8 @@
     <dd id="trough"></dd>
 </dl>
 
+<button id="save">Save</button>
+
+
+<ul id="saved">
+</ul>
